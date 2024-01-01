@@ -1,7 +1,7 @@
-
-#C:\Users\Davey\curseforge\minecraft\Instances\Prodigium Reforged\XaeroWaypoints\Multiplayer_*
-
-#C:\Users\Davey\curseforge\minecraft\Instances\Prodigium Reforged\XaeroWorldMap\Multiplayer_*
+<#
+Davey
+2024/01/01
+#>
 
 [String]$NewIP = Read-Host "Please Enter IP "
 
