@@ -1,0 +1,1 @@
+powershell -ExecutionPolicy Bypass -File Rename-XaeroFolders.ps1
