@@ -6,8 +6,28 @@ Davey
 #Specifyed the known part of the file name.
 $partialFileName = "Multiplayer_"
 
+#Specified Default Path
+$defaultPath1 = "$env:USERPROFILE\curseforge\minecraft\Instances\Prodigium Reforged\XaeroWaypoints\"
+$defaultPath2 = "$env:USERPROFILE\curseforge\minecraft\Instances\Prodigium Reforged\XaeroWorldMap\"
+
+$WaypointPath1
+$MapDataPath2
+
 #Define folder paths
-$folderPaths = @("$env:USERPROFILE\curseforge\minecraft\Instances\Prodigium Reforged\XaeroWaypoints\", "$env:USERPROFILE\curseforge\minecraft\Instances\Prodigium Reforged\XaeroWorldMap\")
+$folderPaths = @()
+
+#Test Folder Path and prompt for new path if not found
+if (!(Test-Path $defaultPath1)) {
+    $WaypointPath1 = Read-Host "Default Waypoint path not found. Please enter a custom Waypoint path, (Press Enter to finish):"
+    $MapDataPath2 = Read-Host "Default Map Data path not found. Please enter a custom Map data path (Press Enter to finish):"
+
+    $folderPaths += $WaypointPath1
+    $folderPaths += $MapDataPath2
+}
+else {
+    $folderPaths += $defaultPath1
+    $folderPaths += $defaultPath2
+}
 
 #Prompt for new IP.
 [String]$NewIP = Read-Host "Please Enter IP "
